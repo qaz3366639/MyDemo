@@ -79,5 +79,14 @@
             android:layout_marginRight="30dp"
             android:onClick="translateJava"
             android:text="java设置位移效果"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:onClick="customAnimation"
+            android:text="自定义动画效果"/>
     </LinearLayout>
 </ScrollView>

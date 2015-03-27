@@ -64,7 +64,8 @@ public class AnimationActivity extends Activity {
     }
 
     public void scaleJava(View v) {
-        ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.5f, 0.0f, 1.5f, 0.5f, 0.5f);
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.5f, 0.0f, 1.5f, Animation.RELATIVE_TO_SELF,
+                0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         scaleAnimation.setFillAfter(true);
         scaleAnimation.setDuration(3000);
         v.startAnimation(scaleAnimation);
@@ -75,5 +76,10 @@ public class AnimationActivity extends Activity {
         translateAnimation.setFillAfter(true);
         translateAnimation.setDuration(3000);
         v.startAnimation(translateAnimation);
+    }
+
+    public void customAnimation(View v) {
+        CustomAnimation customAnimation = new CustomAnimation();
+        v.startAnimation(customAnimation);
     }
 }

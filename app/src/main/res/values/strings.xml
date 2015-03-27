@@ -6,8 +6,11 @@
     <string name="action_settings">Settings</string>
     <string-array name="demoNames" >
         <item>DialogFragment</item>
+        <item>CustomListViewActivity</item>
     </string-array>
     <string-array name="demoComponentNames" >
         <item>com.wrq.mydemo.AnimationActivity</item>
+        <item>com.wrq.mydemo.CustomListViewActivity</item>
     </string-array>
+
 </resources>
