@@ -4,4 +4,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="demoNames" >
+        <item>DialogFragment</item>
+    </string-array>
+    <string-array name="demoComponentNames" >
+        <item>com.wrq.mydemo.AnimationActivity</item>
+    </string-array>
 </resources>
