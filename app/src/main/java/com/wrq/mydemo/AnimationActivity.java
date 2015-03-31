@@ -82,4 +82,9 @@ public class AnimationActivity extends Activity {
         CustomAnimation customAnimation = new CustomAnimation();
         v.startAnimation(customAnimation);
     }
+
+    public void rotate3DAnimation(View v) {
+        Rotate3DAnimation rotate3DAnimation = new Rotate3DAnimation();
+        v.startAnimation(rotate3DAnimation);
+    }
 }
