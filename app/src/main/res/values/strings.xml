@@ -5,12 +5,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string-array name="demoNames" >
-        <item>DialogFragment</item>
+        <item>AnimationActivity</item>
         <item>CustomListViewActivity</item>
+        <item>DialogFragment</item>
     </string-array>
     <string-array name="demoComponentNames" >
         <item>com.wrq.mydemo.AnimationActivity</item>
         <item>com.wrq.mydemo.CustomListViewActivity</item>
+        <item>com.wrq.mydemo.dialogfragment.DialogFragmentActivity</item>
     </string-array>
+    <string name="title_activity_dialog_fragment">DialogFragmentActivity</string>
 
 </resources>

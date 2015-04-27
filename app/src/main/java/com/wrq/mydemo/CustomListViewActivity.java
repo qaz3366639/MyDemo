@@ -22,22 +22,22 @@ public class CustomListViewActivity extends Activity {
 
     private ArrayList<String> mArrayList = new ArrayList<>();
 
-    private ImageView lvCustom;
+    private ListView lvCustom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_listview);
-        lvCustom = (ImageView) findViewById(R.id.lvCustom);
+        lvCustom = (ListView) findViewById(R.id.lvCustom);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_expandable_list_item_1, getData());
-        lvCustom.setOnClickListener(new View.OnClickListener() {
+        lvCustom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 lvCustom.startAnimation(getScaleAnimation());
             }
         });
-//        lvCustom.setAdapter(arrayAdapter);
+        lvCustom.setAdapter(arrayAdapter);
 //        lvCustom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -68,6 +68,24 @@ public class CustomListViewActivity extends Activity {
         scaleAnimation.setDuration(2000);
         scaleAnimation.setFillAfter(true);
         scaleAnimation.setFillEnabled(true);
+        scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                lvCustom.layout(0, 0, lvCustom.getRight() / 2, lvCustom.getBottom());
+                getWindow().getDecorView().invalidate(0, 0, getWindow().getDecorView().getRight(), getWindow().getDecorView().getBottom());
+//                lvCustom.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
         return scaleAnimation;
     }
 
