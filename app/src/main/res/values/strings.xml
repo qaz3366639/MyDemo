@@ -5,12 +5,19 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string-array name="demoNames" >
-        <item>DialogFragment</item>
+        <item>AnimationDemo</item>
         <item>CustomListViewActivity</item>
+        <item>ShadowBgDemo</item>
+        <item>HandlerDemo</item>
+        <item>MVPDemo</item>
     </string-array>
     <string-array name="demoComponentNames" >
         <item>com.wrq.mydemo.AnimationActivity</item>
         <item>com.wrq.mydemo.CustomListViewActivity</item>
+        <item>com.wrq.mydemo.ShadowBgActivity</item>
+        <item>com.wrq.mydemo.HandlerActivity</item>
+        <item>com.wrq.mydemo.mvpdemo.view.MVPLoginActivity</item>
     </string-array>
+    <string name="title_activity_shadow_bg">ShadowBgActivity</string>
 
 </resources>
