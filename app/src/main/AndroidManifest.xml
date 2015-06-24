@@ -19,6 +19,12 @@
         <activity android:name=".AnimationActivity" />
         <activity android:name=".CustomListViewActivity" />
         <activity
+            android:name=".dialogfragment.DialogFragmentActivity"
+            android:label="@string/title_activity_dialog_fragment" >
+        </activity>
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".CustomListViewActivity" />
+        <activity
             android:name=".ShadowBgActivity"
             android:label="@string/title_activity_shadow_bg" >
         </activity>

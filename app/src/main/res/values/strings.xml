@@ -10,6 +10,7 @@
         <item>ShadowBgDemo</item>
         <item>HandlerDemo</item>
         <item>MVPDemo</item>
+        <item>DialogFragment</item>
     </string-array>
     <string-array name="demoComponentNames" >
         <item>com.wrq.mydemo.AnimationActivity</item>
@@ -17,7 +18,9 @@
         <item>com.wrq.mydemo.ShadowBgActivity</item>
         <item>com.wrq.mydemo.HandlerActivity</item>
         <item>com.wrq.mydemo.mvpdemo.view.MVPLoginActivity</item>
+        <item>com.wrq.mydemo.dialogfragment.DialogFragmentActivity</item>
     </string-array>
     <string name="title_activity_shadow_bg">ShadowBgActivity</string>
+    <string name="title_activity_dialog_fragment">DialogFragmentActivity</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
@@ -79,8 +80,14 @@ public class AnimationActivity extends Activity {
     }
 
     public void customAnimation(View v) {
+        AnimationSet animationSet = new AnimationSet(false);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.alpha_animation);
         CustomAnimation customAnimation = new CustomAnimation();
-        v.startAnimation(customAnimation);
+        animationSet.addAnimation(animation);
+        animationSet.addAnimation(customAnimation);
+        v.clearAnimation();
+        v.setAnimation(animationSet);
+        animationSet.start();
     }
 
     public void rotate3DAnimation(View v) {
