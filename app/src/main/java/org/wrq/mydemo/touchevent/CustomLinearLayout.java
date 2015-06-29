@@ -1,6 +1,7 @@
 package org.wrq.mydemo.touchevent;
 
 import android.content.Context;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -16,10 +17,18 @@ public class CustomLinearLayout extends LinearLayout {
 
     private boolean isConsumeEvent = false;
 
-    private static String TAG = "View";
+    private String TAG = "View";
 
     public CustomLinearLayout(Context context) {
         super(context);
+    }
+
+    public CustomLinearLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public CustomLinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -76,11 +85,11 @@ public class CustomLinearLayout extends LinearLayout {
         this.isConsumeEvent = isConsumeEvent;
     }
 
-    public static String getTAG() {
+    public String getTAG() {
         return TAG;
     }
 
-    public static void setTAG(String TAG) {
-        CustomLinearLayout.TAG = TAG;
+    public void setTAG(String TAG) {
+        this.TAG = TAG;
     }
 }

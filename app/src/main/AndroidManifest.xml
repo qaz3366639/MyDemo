@@ -30,6 +30,7 @@
         </activity>
         <activity android:name=".HandlerActivity" />
         <activity android:name=".mvpdemo.view.MVPLoginActivity" />
+        <activity android:name=".touchevent.TouchEventActivity"/>
     </application>
 
 </manifest>
