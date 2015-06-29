@@ -1,4 +1,4 @@
-package com.wrq.mydemo;
+package org.wrq.mydemo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
