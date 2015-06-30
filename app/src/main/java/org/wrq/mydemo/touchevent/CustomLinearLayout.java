@@ -17,6 +17,8 @@ public class CustomLinearLayout extends LinearLayout {
 
     private boolean isConsumeEvent = false;
 
+    private IUpdate iUpdate;
+
     private String TAG = "View";
 
     public CustomLinearLayout(Context context) {
@@ -35,16 +37,22 @@ public class CustomLinearLayout extends LinearLayout {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Toast.makeText(getContext(), TAG + ":onInterceptTouchEvent ACTION_DOWN ---"
-                        + isIntercept, Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update(TAG + ":onInterceptTouchEvent ACTION_DOWN ---"
+                            + isIntercept);
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
-                Toast.makeText(getContext(), TAG + ":onInterceptTouchEvent ACTION_MOVE ---"
-                        + isIntercept, Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update(TAG + ":onInterceptTouchEvent ACTION_MOVE ---"
+                            + isIntercept);
+                }
                 break;
             case MotionEvent.ACTION_UP:
-                Toast.makeText(getContext(), TAG + ":onInterceptTouchEvent ACTION_UP ---"
-                        + isIntercept, Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update(TAG + ":onInterceptTouchEvent ACTION_UP ---"
+                            + isIntercept);
+                }
                 break;
         }
         return isIntercept;
@@ -54,16 +62,22 @@ public class CustomLinearLayout extends LinearLayout {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Toast.makeText(getContext(), TAG + ":onTouchEvent ACTION_DOWN ---"
-                        + isConsumeEvent, Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update(TAG + ":onTouchEvent ACTION_DOWN ---"
+                            + isConsumeEvent);
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
-                Toast.makeText(getContext(), TAG + ":onTouchEvent ACTION_MOVE ---"
-                        + isConsumeEvent, Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update(TAG + ":onTouchEvent ACTION_MOVE ---"
+                            + isConsumeEvent);
+                }
                 break;
             case MotionEvent.ACTION_UP:
-                Toast.makeText(getContext(), TAG + ":onTouchEvent ACTION_UP ---"
-                        + isConsumeEvent, Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update(TAG + ":onTouchEvent ACTION_UP ---"
+                            + isConsumeEvent);
+                }
                 break;
         }
         return isConsumeEvent;
@@ -91,5 +105,9 @@ public class CustomLinearLayout extends LinearLayout {
 
     public void setTAG(String TAG) {
         this.TAG = TAG;
+    }
+
+    public void setiUpdate(IUpdate iUpdate) {
+        this.iUpdate = iUpdate;
     }
 }

@@ -13,6 +13,10 @@ import android.widget.Toast;
  */
 public class CustomTextView extends TextView {
 
+    private IUpdate iUpdate;
+
+    private boolean isEvent;
+
     public CustomTextView(Context context) {
         super(context);
     }
@@ -25,26 +29,33 @@ public class CustomTextView extends TextView {
         super(context, attrs, defStyleAttr);
     }
 
-    public CustomTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Toast.makeText(getContext(), "CustomTextView:onTouchEvent ACTION_DOWN ---"
-                        , Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update("CustomTextView:onTouchEvent ACTION_DOWN ---");
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
-                Toast.makeText(getContext(), "CustomTextView:onTouchEvent ACTION_MOVE ---"
-                        , Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update("CustomTextView:onTouchEvent ACTION_MOVE ---");
+                }
                 break;
             case MotionEvent.ACTION_UP:
-                Toast.makeText(getContext(), "CustomTextView:onTouchEvent ACTION_UP ---"
-                        , Toast.LENGTH_SHORT).show();
+                if (iUpdate != null) {
+                    iUpdate.update("CustomTextView:onTouchEvent ACTION_UP ---");
+                }
                 break;
         }
-        return super.onTouchEvent(event);
+        return isEvent;
+    }
+
+    public void setiUpdate(IUpdate iUpdate) {
+        this.iUpdate = iUpdate;
+    }
+
+    public void setIsEvent(boolean isEvent) {
+        this.isEvent = isEvent;
     }
 }

@@ -2,10 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/activity_vertical_margin">
-
-
+    android:padding="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,6 +69,22 @@
             style="@style/touch_event_switch"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="View3 Event"/>
+
+        <Switch
+            android:id="@+id/sEvent3"
+            style="@style/touch_event_switch"/>
+    </LinearLayout>
+
     <org.wrq.mydemo.touchevent.CustomLinearLayout
         android:id="@+id/cllView1"
         android:layout_width="match_parent"
@@ -89,10 +103,29 @@
             android:background="@android:color/holo_red_light">
 
             <org.wrq.mydemo.touchevent.CustomTextView
+                android:id="@+id/ctvView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:background="@android:color/white"/>
         </org.wrq.mydemo.touchevent.CustomLinearLayout>
     </org.wrq.mydemo.touchevent.CustomLinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
